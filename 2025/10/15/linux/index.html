@@ -20,24 +20,47 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="人因不完美而完美">
-<meta property="og:type" content="website">
-<meta property="og:title" content="献给查理的数字诗">
-<meta property="og:url" content="http://example.com/index.html">
+    <meta name="description" content="一.文件目录结构  &#x2F;etc:存放的配置文件 &#x2F;home:你创建一个用户以后,会在home生成一个和用户名相同的目录 &#x2F;root:超级用户的家目录 &#x2F;sbin,&#x2F;bin:是存放二进制命令的.bin目录被挂载到usr&#x2F;bin目录了 &#x2F;tmp:存放的是临时文件 &#x2F;var:放的是可变数据(数据库,日志)  &#x2F;usr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络安全">
+<meta property="og:url" content="http://example.com/2025/10/15/linux/index.html">
 <meta property="og:site_name" content="献给查理的数字诗">
-<meta property="og:description" content="人因不完美而完美">
+<meta property="og:description" content="一.文件目录结构  &#x2F;etc:存放的配置文件 &#x2F;home:你创建一个用户以后,会在home生成一个和用户名相同的目录 &#x2F;root:超级用户的家目录 &#x2F;sbin,&#x2F;bin:是存放二进制命令的.bin目录被挂载到usr&#x2F;bin目录了 &#x2F;tmp:存放的是临时文件 &#x2F;var:放的是可变数据(数据库,日志)  &#x2F;usr">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/%E6%88%AA%E5%B1%8F2025-10-15%2016.55.10.png">
+<meta property="og:image" content="http://example.com/images/%E6%88%AA%E5%B1%8F2025-10-15%2017.08.39.png">
+<meta property="og:image" content="http://example.com/images/S.png">
+<meta property="og:image" content="http://example.com/images/wsm@wsm-virtual-machineprocs%20cd.png">
+<meta property="og:image" content="http://example.com/images/%E2%80%A2virtual-nachtne.png">
+<meta property="og:image" content="http://example.com/images/Inus%20%E7%B3%BB%E7%BB%9F%E7%90%86%E4%B8%80%E7%A5%9E%E5%86%8D%E5%8B%95%E7%B2%89%E5%A4%9A%E7%94%A8%E6%88%B7%E7%B3%BB%E5%9F%8E%EF%BC%8C%20%E4%B8%8D%E5%88%BB%E7%9A%84%E5%B7%9E%E6%88%B7%E9%87%91%E6%89%8B%E4%B8%8D%E5%BE%97%E7%9A%84%E5%A2%9E%E6%A5%BC%EF%BC%8C%E8%AA%BF%E6%9C%89%E4%B8%8D%E9%A3%8E%E7%9A%84%E8%AE%BE%E9%97%9C%E3%80%82%E4%B8%BA%E4%BA%86%E4%BF%9D%E6%8A%A4%E7%B3%BB%E5%BE%B7%E7%9A%84%E5%AE%89%E9%87%91%E7%A4%BE%EF%BC%8CLn%20%E7%B3%BB%E7%B7%9A%E5%AF%B9%E7%A6%BE%E5%90%8C%E9%88%89.png">
+<meta property="og:image" content="http://example.com/images/2%203.png">
+<meta property="og:image" content="http://example.com/images/3.1.%20cd.png">
+<meta property="og:image" content="http://example.com/images/ysmawsm-virtual-machine$%20cd%20~dl.png">
+<meta property="og:image" content="http://example.com/images/Ls%20-1.png">
+<meta property="og:image" content="http://example.com/images/util-linux%20%E7%89%88%E6%9C%AC%E7%9A%84%20renone%20%E4%B8%AD%EF%BC%8C%E4%BD%A0%E9%9C%80%E8%A6%81%E6%8F%90%E4%BE%9B%E5%8E%9F%E5%A7%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%8C%E8%80%8C%E4%B8%8D%E6%98%AF%E6%AD%A3%E5%88%99.png">
+<meta property="og:image" content="http://example.com/images/%E5%9C%A8%E7%B1%BB%20Unix%20%E7%B3%BB%E7%BB%9F%E4%B8%AD%EF%BC%8C%E4%BD%A0%E5%8F%AF%E4%BB%A5%E4%BE%BF%E7%94%A8%201s-%E3%80%91%20%E9%87%91%E4%BB%A4%E6%9D%A5%E7%AB%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E7%9A%84%E6%9D%83%E9%99%90%E3%80%82%E8%AF%A5%E5%91%BD%E4%BB%A4%E4%BC%9A%E6%98%9F%E7%A4%BA%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%A6%E7%83%9F%E4%BF%A1%E6%81%AF%EF%BC%8C%E5%8C%85%E6%8B%AC%E6%9D%83%E9%99%90%E3%80%82.png">
+<meta property="og:image" content="http://example.com/images/cheod%20764%20101%20%E6%99%AF%E4%B8%80%E4%B8%AA%E7%94%A8%E4%BA%8E%E6%9B%B4%E6%94%BE%E6%96%87%E4%BB%B6%20101%20%E6%9D%83%E9%99%90%E7%9A%84%E5%91%BD%E4%BB%A4%E3%80%82%E8%BF%99%E9%87%8C%E7%9A%84%20764%20%E6%98%AF%E5%85%AB%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E7%9A%84%E6%9D%83%E9%99%90%E8%AE%BE%E7%BD%AE%E3%80%82%E5%85%B7%E4%BD%93%E5%90%AB%E4%B9%89%E5%A6%82.png">
+<meta property="og:image" content="http://example.com/images/arep%20bin%20passwd.png">
+<meta property="og:image" content="http://example.com/images/sh-virtual-nachine.png">
+<meta property="og:image" content="http://example.com/images/snowsn-virtual-nachineis%20arep.png">
+<meta property="og:image" content="http://example.com/images/rSsngwSn-vLrtuaL-nachtneis%20orep%20(9)%20passnd%20C.png">
+<meta property="og:image" content="http://example.com/images/ssnawsn-vLrtual-nachine%EF%BC%84%20ps%20aux%20grep%20ssh.png">
+<meta property="og:image" content="http://example.com/images/wsmewsm-virtual-machine.png">
+<meta property="article:published_time" content="2025-10-15T09:00:00.000Z">
+<meta property="article:modified_time" content="2025-10-15T11:02:27.911Z">
 <meta property="article:author" content="sm">
+<meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/%E6%88%AA%E5%B1%8F2025-10-15%2016.55.10.png">
 
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2025/10/15/linux/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2025/10/15/linux/","path":"2025/10/15/linux/","title":"网络安全"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>献给查理的数字诗</title>
+<title>网络安全 | 献给查理的数字诗</title>
   
 
 
@@ -87,7 +110,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">献给查理的数字诗</h1>
+      <p class="site-title">献给查理的数字诗</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -113,7 +136,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -126,6 +149,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E5%A6%82%EF%BC%8C%E8%A6%81%E5%9C%A8-example-txt-%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%8C%85%E5%90%AB-%E2%80%9Chello%E2%80%9D-%E7%9A%84%E8%A1%8C%EF%BC%8C%E4%BD%BF%E7%94%A8%EF%BC%9A-grep-%E2%80%9Chello%E2%80%9D-example-txt"><span class="nav-number">1.</span> <span class="nav-text">   例如，要在 example.txt 中查找包含 “hello” 的行，使用：   grep “hello” example.txt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grep-i-%E2%80%9Chello%E2%80%9D-example-txt"><span class="nav-number">2.</span> <span class="nav-text">   grep -i “hello” example.txt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grep-n-%E2%80%9Chello%E2%80%9D-example-txt"><span class="nav-number">3.</span> <span class="nav-text">   grep -n “hello” example.txt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grep-r-%E2%80%9Chello%E2%80%9D-home-user"><span class="nav-number">4.</span> <span class="nav-text">   grep -r “hello” &#x2F;home&#x2F;user&#x2F;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grep-o-%E2%80%9Chello%E2%80%9D-example-txt"><span class="nav-number">5.</span> <span class="nav-text">   grep -o “hello” example.txt</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -167,96 +191,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/09/20/First/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/10.14.jpg">
-      <meta itemprop="name" content="sm">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="献给查理的数字诗">
-      <meta itemprop="description" content="人因不完美而完美">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | 献给查理的数字诗">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-              <span class="post-sticky-flag" title="Sticky">
-                <i class="fa fa-thumbtack"></i>
-              </span><a href="/2025/09/20/First/" class="post-title-link" itemprop="url">欢迎来到我的小站</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2025-09-20 16:00:00" itemprop="dateCreated datePublished" datetime="2025-09-20T16:00:00+08:00">2025-09-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-10-15 15:49:02" itemprop="dateModified" datetime="2025-10-15T15:49:02+08:00">2025-10-15</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><img src="/images/1.jpg"></p>
-<p>希望每天都能够好好生活.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2025/10/15/linux/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -270,13 +215,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | 献给查理的数字诗">
+      <meta itemprop="name" content="网络安全 | 献给查理的数字诗">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/10/15/linux/" class="post-title-link" itemprop="url">网络安全</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          网络安全
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -308,8 +253,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-          <p>一.文件目录结构</p>
+    <div class="post-body" itemprop="articleBody"><p>一.文件目录结构</p>
 <p><img src="/images/%E6%88%AA%E5%B1%8F2025-10-15%2016.55.10.png"></p>
 <p>&#x2F;etc:存放的配置文件</p>
 <p>&#x2F;home:你创建一个用户以后,会在home生成一个和用户名相同的目录</p>
@@ -604,7 +548,6 @@
 <p>删除用户userdel -r 用户名</p>
 <p>tar压缩，解压缩（回去搜索）</p>
 
-      
     </div>
 
     
@@ -612,354 +555,25 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-tags">
+              <a href="/tags/linux/" rel="tag"># linux</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/10/15/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" rel="prev" title="网络安全">
+                  <i class="fa fa-angle-left"></i> 网络安全
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/10/15/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/10.14.jpg">
-      <meta itemprop="name" content="sm">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="献给查理的数字诗">
-      <meta itemprop="description" content="人因不完美而完美">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | 献给查理的数字诗">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/10/15/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" class="post-title-link" itemprop="url">网络安全</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2025-10-15 14:00:00 / Modified: 16:44:04" itemprop="dateCreated datePublished" datetime="2025-10-15T14:00:00+08:00">2025-10-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" itemprop="url" rel="index"><span itemprop="name">网络安全</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>网络安全</p>
-<h2 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h2><h3 id="01-计算机基础"><a href="#01-计算机基础" class="headerlink" title="01 计算机基础"></a>01 计算机基础</h3><p><a href="/pdf/01-computer-introduction.pdf">计算机概论</a></p>
-<h3 id="02-Linux系统入门"><a href="#02-Linux系统入门" class="headerlink" title="02 Linux系统入门"></a>02 Linux系统入门</h3><p><a href="/pdf/02-linux-what-is.pdf">Linux是什么</a><br><a href="/pdf/02-linux-file-management.pdf">Linux文件管理与查询</a></p>
-<h3 id="03-系统管理"><a href="#03-系统管理" class="headerlink" title="03 系统管理"></a>03 系统管理</h3><p><a href="/pdf/03-vim-user-management.pdf">VIM 编辑器与用户管理</a><br><a href="/pdf/04-privilege-escalation.pdf">提权</a><br><a href="/pdf/05-user-permissions.pdf">用户权限</a></p>
-<h3 id="04-实用工具"><a href="#04-实用工具" class="headerlink" title="04 实用工具"></a>04 实用工具</h3><p><a href="/pdf/06-compress-decompress.pdf">压缩和解压缩</a><br><a href="/pdf/07-software-management.pdf">软件管理</a><br><a href="/pdf/08-software-management-2.pdf">软件管理2</a></p>
-<h2 id="🗄️-系统管理篇"><a href="#🗄️-系统管理篇" class="headerlink" title="🗄️ 系统管理篇"></a>🗄️ 系统管理篇</h2><h3 id="05-存储管理"><a href="#05-存储管理" class="headerlink" title="05 存储管理"></a>05 存储管理</h3><p><a href="/pdf/09-storage-management-1.pdf">存储管理1</a><br><a href="/pdf/10-storage-management-2.pdf">存储管理2</a></p>
-<h3 id="06-进程与任务"><a href="#06-进程与任务" class="headerlink" title="06 进程与任务"></a>06 进程与任务</h3><p><a href="/pdf/11-process-management.pdf">进程管理</a><br><a href="/pdf/12-redirection-pipes.pdf">重定向管道</a><br><a href="/pdf/13-cron-scheduler.pdf">计划任务</a></p>
-<h3 id="07-网络与日志"><a href="#07-网络与日志" class="headerlink" title="07 网络与日志"></a>07 网络与日志</h3><p><a href="/pdf/14-network-management.pdf">网络管理</a><br><a href="/pdf/15-log-management.pdf">日志管理</a></p>
-<h2 id="安全实战篇"><a href="#安全实战篇" class="headerlink" title="安全实战篇"></a>安全实战篇</h2><h3 id="08-钓鱼攻击分析"><a href="#08-钓鱼攻击分析" class="headerlink" title="08 钓鱼攻击分析"></a>08 钓鱼攻击分析</h3><p><a href="/pdf/16-phishing-analysis.pdf">钓鱼网站原理分析</a><br><a href="/pdf/17-apache-vm-phishing-setup.pdf">Apache虚拟机主机配置及钓鱼页面伪造</a><br><a href="/pdf/18-phishing-db-setup.pdf">钓鱼网站数据库配置</a></p>
-<h3 id="09-漏洞分析与复现"><a href="#09-漏洞分析与复现" class="headerlink" title="09 漏洞分析与复现"></a>09 漏洞分析与复现</h3><p><a href="/pdf/20-fastjson-deserialization.pdf">Fastjson反序列化漏洞分析与复现</a><br><a href="/pdf/21-log4j2-analysis.pdf">Log4j2漏洞分析与复现</a><br><a href="/pdf/22-weblogic-deserialization.pdf">Weblogic反序列化漏洞</a><br><a href="/pdf/23-shiro-deserialization.pdf">Shiro反序列化漏洞</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/10/15/%E9%9D%A2%E8%AF%95%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/10.14.jpg">
-      <meta itemprop="name" content="sm">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="献给查理的数字诗">
-      <meta itemprop="description" content="人因不完美而完美">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | 献给查理的数字诗">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/10/15/%E9%9D%A2%E8%AF%95%E9%A2%98/" class="post-title-link" itemprop="url">网络安全</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2025-10-15 14:00:00 / Modified: 16:36:37" itemprop="dateCreated datePublished" datetime="2025-10-15T14:00:00+08:00">2025-10-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%9D%A2%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">面试</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id=""><a href="#" class="headerlink" title=""></a></h3><p><a href="/pdf/360_%E7%A7%8B%E6%8B%9B_%E5%AE%89%E5%85%A8.pdf">360秋招面试题</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/10/14/%E5%A6%82%E4%BD%95%E5%9C%A8%E5%8D%9A%E5%AE%A2%E4%B8%8A%E4%B8%8A%E4%BC%A0%E7%85%A7%E7%89%87(2025:10:14)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/10.14.jpg">
-      <meta itemprop="name" content="sm">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="献给查理的数字诗">
-      <meta itemprop="description" content="人因不完美而完美">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | 献给查理的数字诗">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/10/14/%E5%A6%82%E4%BD%95%E5%9C%A8%E5%8D%9A%E5%AE%A2%E4%B8%8A%E4%B8%8A%E4%BC%A0%E7%85%A7%E7%89%87(2025:10:14)/" class="post-title-link" itemprop="url">如何在博客上上传照片</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2025-10-14 12:00:00 / Modified: 21:39:06" itemprop="dateCreated datePublished" datetime="2025-10-14T12:00:00+08:00">2025-10-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/blog%E7%9A%84%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">blog的相关配置</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>步骤:</p>
-<p>一.在Blog&#x2F;source文件夹下创建一个images文件夹用来存储图片</p>
-<img src="/images/2.png" style="zoom:50%;" />
-
-<p>二.打开<strong>Typora——&gt;偏好设置</strong>,点击图像,将图示都勾选上.</p>
-<p><img src="/images/3.png" style="zoom:50%;" />三.打开你要编辑的文章,设置图片根目录,选择source作为根目录.</p>
-<p>​    然后文章内容就会出现<code>typora-root-url: ..</code></p>
-<img src="/images/4.png" style="zoom:50%;" />
-
-<p>四.然后将需要上传的图片放进images,插入图片.</p>
-<img src="/images/5.png" style="zoom:50%;" />
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/01/13/%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E5%8D%9A%E5%AE%A2%E5%A4%B4%E5%83%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/10.14.jpg">
-      <meta itemprop="name" content="sm">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="献给查理的数字诗">
-      <meta itemprop="description" content="人因不完美而完美">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | 献给查理的数字诗">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/01/13/%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E5%8D%9A%E5%AE%A2%E5%A4%B4%E5%83%8F/" class="post-title-link" itemprop="url">如何设置博客的头像</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2025-01-13 20:10:00" itemprop="dateCreated datePublished" datetime="2025-01-13T20:10:00+08:00">2025-01-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-10-14 21:57:36" itemprop="dateModified" datetime="2025-10-14T21:57:36+08:00">2025-10-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/blog%E7%9A%84%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">blog的相关配置</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>步骤:</p>
-<p>一.打开<code>themes/next/</code>下的<code>_config.yml</code>，查找<code>avatar</code>,修改url为图片地址,在此之前要把图片先放在Blog&#x2F;themes&#x2F;next&#x2F;source&#x2F;images文件下,然后配置文件内容.如图:<img src="/images/%E6%88%AA%E5%B1%8F2025-10-14%2021.40.03.png"></p>
-<p>二.确保图像位置正确,把头像文件放在:Blog&#x2F;source&#x2F;images&#x2F;头像.jpg</p>
-<p>三.hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
 
 
 
