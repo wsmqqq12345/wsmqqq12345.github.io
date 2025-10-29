@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="基础概念域名 概念: 每一个计算机都有一个数字地址,— IP地址,但是这个IP地址很复杂,难以记住,所以我们就给他一个容易记的别名—域名.例如:百度的IP地址之一是:180.101.50.242,域名是:www.baidu.com 结构: 一个完整的域名是从右到左读的,                   www        .    baidu       .    com">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络安全">
+<meta property="og:url" content="http://example.com/2025/10/15/web%E5%AE%89%E5%85%A8|%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95|%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/index.html">
+<meta property="og:site_name" content="献给查理的数字诗">
+<meta property="og:description" content="基础概念域名 概念: 每一个计算机都有一个数字地址,— IP地址,但是这个IP地址很复杂,难以记住,所以我们就给他一个容易记的别名—域名.例如:百度的IP地址之一是:180.101.50.242,域名是:www.baidu.com 结构: 一个完整的域名是从右到左读的,                   www        .    baidu       .    com">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-10-15T06:00:00.000Z">
+<meta property="article:modified_time" content="2025-10-29T13:53:07.044Z">
+<meta property="article:author" content="sm">
+<meta property="article:tag" content="渗透">
+<meta property="article:tag" content="自学">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2025/10/15/web%E5%AE%89%E5%85%A8|%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95|%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2025/10/15/web%E5%AE%89%E5%85%A8|%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95|%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/","path":"2025/10/15/web安全|渗透测试|网络安全/","title":"网络安全"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>网络安全 | 献给查理的数字诗</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">献给查理的数字诗</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>Commonweal 404</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">基础概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP-%E7%9A%84%E5%8D%8F%E8%AE%AE%E6%A0%88"><span class="nav-number">1.0.1.</span> <span class="nav-text">HTTP 的协议栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTPS-%E7%9A%84%E5%8D%8F%E8%AE%AE%E6%A0%88"><span class="nav-number">1.0.2.</span> <span class="nav-text">HTTPS 的协议栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E5%8C%BA%E5%88%AB%E6%80%BB%E7%BB%93"><span class="nav-number">1.0.3.</span> <span class="nav-text">核心区别总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82-%E5%93%8D%E5%BA%94%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.0.4.</span> <span class="nav-text">请求-响应模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E7%BB%84%E4%BB%B6%E5%AF%B9%E6%AF%94"><span class="nav-number">1.0.5.</span> <span class="nav-text">核心组件对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81Request%EF%BC%88%E8%AF%B7%E6%B1%82%EF%BC%89-%E8%AF%A6%E7%BB%86%E5%88%86%E8%A7%A3"><span class="nav-number">1.0.6.</span> <span class="nav-text">一、Request（请求） - 详细分解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E8%AF%B7%E6%B1%82%E8%A1%8C"><span class="nav-number">1.0.6.1.</span> <span class="nav-text">1. 请求行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E8%AF%B7%E6%B1%82%E5%A4%B4"><span class="nav-number">1.0.6.2.</span> <span class="nav-text">2. 请求头</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E8%AF%B7%E6%B1%82%E4%BD%93"><span class="nav-number">1.0.6.3.</span> <span class="nav-text">3. 请求体</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Request-%E5%AE%8C%E6%95%B4%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.0.7.</span> <span class="nav-text">Request 完整示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Response%EF%BC%88%E5%93%8D%E5%BA%94%EF%BC%89-%E8%AF%A6%E7%BB%86%E5%88%86%E8%A7%A3"><span class="nav-number">1.0.8.</span> <span class="nav-text">二、Response（响应） - 详细分解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E7%8A%B6%E6%80%81%E8%A1%8C"><span class="nav-number">1.0.8.1.</span> <span class="nav-text">1. 状态行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%93%8D%E5%BA%94%E5%A4%B4"><span class="nav-number">1.0.8.2.</span> <span class="nav-text">2. 响应头</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E5%93%8D%E5%BA%94%E4%BD%93"><span class="nav-number">1.0.8.3.</span> <span class="nav-text">3. 响应体</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Response-%E5%AE%8C%E6%95%B4%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.0.9.</span> <span class="nav-text">Response 完整示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.0.10.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="sm"
+      src="/images/10.14.jpg">
+  <p class="site-author-name" itemprop="name">sm</p>
+  <div class="site-description" itemprop="description">人因不完美而完美</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/10/15/web%E5%AE%89%E5%85%A8|%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95|%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/10.14.jpg">
+      <meta itemprop="name" content="sm">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="献给查理的数字诗">
+      <meta itemprop="description" content="人因不完美而完美">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="网络安全 | 献给查理的数字诗">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          网络安全
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-10-15 14:00:00" itemprop="dateCreated datePublished" datetime="2025-10-15T14:00:00+08:00">2025-10-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-10-29 21:53:07" itemprop="dateModified" datetime="2025-10-29T21:53:07+08:00">2025-10-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%B8%97%E9%80%8F/" itemprop="url" rel="index"><span itemprop="name">渗透</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h1><p><strong>域名</strong></p>
+<p>概念:</p>
+<p>每一个计算机都有一个数字地址,— IP地址,但是这个IP地址很复杂,难以记住,所以我们就给他一个容易记的别名—域名.例如:百度的IP地址之一是:180.101.50.242,域名是:<a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a></p>
+<p>结构:</p>
+<p>一个完整的域名是从右到左读的,</p>
+<pre><code>                  www        .    baidu       .    com
+                [子域名]         [二级域]         [顶级域]
+</code></pre>
+<ul>
+<li><strong>顶级域（TLD）</strong>：也叫做“域名后缀”，是最后一部分，如 <code>.com</code>。<ul>
+<li><strong>通用顶级域（gTLD）</strong>：如 <code>.com</code>（公司&#x2F;商业）、<code>.org</code>（组织）、<code>.net</code>（网络）、<code>.edu</code>（教育机构），以及现在成千上万的新顶级域如 <code>.app</code>, <code>.shop</code>, <code>.ai</code> 等。</li>
+<li><strong>国家和地区代码顶级域（ccTLD）</strong>：如 <code>.cn</code>（中国）、<code>.us</code>（美国）、<code>.jp</code>（日本）等。</li>
+</ul>
+</li>
+<li><strong>二级域（SLD）</strong>：这是域名的核心部分，是您自己注册和选择的独特名称，如 <code>baidu</code>。它代表了您的品牌、公司或个人身份。</li>
+<li><strong>子域名</strong>：这是最左边的部分，是可选的，如 <code>www</code>。</li>
+</ul>
+<p>域名是怎么工作的?</p>
+<p>当你在浏览器中输入一个域名并按下回车时，背后发生了一个非常快速和复杂的过程，这依赖于 <strong>域名系统（DNS）</strong>。</p>
+<p>你可以把 <strong>DNS</strong> 想象成互联网的“巨型电话簿”或“导航地图”。</p>
+<p>过程简化如下：</p>
+<ol>
+<li>您在浏览器输入 <code>www.baidu.com</code>。</li>
+<li>您的计算机会向 <strong>DNS服务器</strong> 发出一个查询请求：“请问 <code>www.baidu.com</code> 的IP地址是多少？”</li>
+<li>DNS服务器在它的记录中查找，最终找到对应的IP地址，例如 <code>180.101.50.242</code>。</li>
+<li>DNS服务器将这个IP地址返回给您的浏览器。</li>
+<li>您的浏览器拿到IP地址后，才真正地向 <code>180.101.50.242</code> 这个服务器发起连接，请求网站内容。</li>
+<li>服务器将网页数据发送回您的浏览器，您就看到百度的首页了。</li>
+</ol>
+<p>整个过程通常在毫秒之间完成。</p>
+<p>HOSTS文件和DNS</p>
+<p> <strong>HTTP</strong> 和 <strong>HTTPS</strong> 的网络协议栈对比</p>
+<hr>
+<h3 id="HTTP-的协议栈"><a href="#HTTP-的协议栈" class="headerlink" title="HTTP 的协议栈"></a><strong>HTTP 的协议栈</strong></h3><p>text</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HTTP</span><br><span class="line">TCP</span><br><span class="line">IP</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><strong>HTTP</strong>（超文本传输协议）：负责传输网页内容。</li>
+<li><strong>TCP</strong>（传输控制协议）：提供可靠的数据传输。</li>
+<li><strong>IP</strong>（网际协议）：负责网络寻址和路由。</li>
+</ul>
+<p><strong>特点</strong>：数据是<strong>明文传输</strong>，不安全，容易被窃听或篡改。</p>
+<hr>
+<h3 id="HTTPS-的协议栈"><a href="#HTTPS-的协议栈" class="headerlink" title="HTTPS 的协议栈"></a><strong>HTTPS 的协议栈</strong></h3><p>text</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HTTP</span><br><span class="line">SSL or TLS</span><br><span class="line">TCP</span><br><span class="line">IP</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><strong>HTTP</strong>：仍然是传输网页内容的应用层协议。</li>
+<li><strong>SSL &#x2F; TLS</strong>（安全套接层 &#x2F; 传输层安全协议）：在 HTTP 和 TCP 之间加入了一个<strong>安全层</strong>。</li>
+<li><strong>TCP</strong> 和 <strong>IP</strong>：基础通信协议不变。</li>
+</ul>
+<p><strong>特点</strong>：</p>
+<ul>
+<li>在 HTTP 和 TCP 之间增加了 <strong>SSL&#x2F;TLS</strong> 加密层。</li>
+<li>数据经过<strong>加密</strong>，防止窃听和篡改。</li>
+<li>提供身份验证，确保你连接的是正确的服务器。</li>
+</ul>
+<h3 id="核心区别总结"><a href="#核心区别总结" class="headerlink" title="核心区别总结"></a><strong>核心区别总结</strong></h3><table>
+<thead>
+<tr>
+<th align="left">特性</th>
+<th align="left">HTTP</th>
+<th align="left">HTTPS</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>安全性</strong></td>
+<td align="left">明文传输，不安全</td>
+<td align="left">加密传输，安全</td>
+</tr>
+<tr>
+<td align="left"><strong>协议栈</strong></td>
+<td align="left">HTTP → TCP → IP</td>
+<td align="left">HTTP → <strong>SSL&#x2F;TLS</strong> → TCP → IP</td>
+</tr>
+<tr>
+<td align="left"><strong>默认端口</strong></td>
+<td align="left">80</td>
+<td align="left">443</td>
+</tr>
+<tr>
+<td align="left"><strong>用途</strong></td>
+<td align="left">普通网页浏览</td>
+<td align="left">需要安全性的场景（如登录、支付</td>
+</tr>
+</tbody></table>
+<h3 id="请求-响应模型"><a href="#请求-响应模型" class="headerlink" title="请求-响应模型"></a><strong>请求-响应模型</strong></h3><p>HTTP 协议基于<strong>客户端-服务器模型</strong>。一次完整的交互包含一对 <strong>Request</strong> 和 <strong>Response</strong>。</p>
+<ul>
+<li><strong>客户端 (Client)</strong>：通常是 Web 浏览器或 App，主动发起一个 <strong>Request</strong>。</li>
+<li><strong>服务器 (Server)</strong>：接收并处理 Request，然后返回一个 <strong>Response</strong>。</li>
+</ul>
+<h3 id="核心组件对比"><a href="#核心组件对比" class="headerlink" title="核心组件对比"></a><strong>核心组件对比</strong></h3><table>
+<thead>
+<tr>
+<th align="left">组件</th>
+<th align="left">Request（请求）</th>
+<th align="left">Response（响应）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>起始行</strong></td>
+<td align="left"><strong>请求行</strong>：定义了操作的类型和目标。</td>
+<td align="left"><strong>状态行</strong>：报告了请求的处理结果。</td>
+</tr>
+<tr>
+<td align="left"><strong>头部</strong></td>
+<td align="left"><strong>请求头</strong>：传递客户端信息、请求偏好和条件。</td>
+<td align="left"><strong>响应头</strong>：传递服务器信息、响应元数据和指令。</td>
+</tr>
+<tr>
+<td align="left"><strong>主体</strong></td>
+<td align="left"><strong>请求体</strong>：包含要发送给服务器的数据（可选）。</td>
+<td align="left"><strong>响应体</strong>：包含服务器返回的实际数据（可选）。</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="一、Request（请求）-详细分解"><a href="#一、Request（请求）-详细分解" class="headerlink" title="一、Request（请求） - 详细分解"></a><strong>一、Request（请求） - 详细分解</strong></h3><p>请求包是客户端向服务器发出的“问题”或“指令”。</p>
+<h4 id="1-请求行"><a href="#1-请求行" class="headerlink" title="1. 请求行"></a><strong>1. 请求行</strong></h4><p>请求的第一行，格式为：<strong><code>&lt;方法&gt; &lt;请求目标&gt; &lt;HTTP版本&gt;</code></strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">部分</th>
+<th align="left">描述</th>
+<th align="left">常见示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>方法</strong></td>
+<td align="left">定义要对资源执行的操作。</td>
+<td align="left"><code>GET</code>（获取资源），<code>POST</code>（提交数据），<code>PUT</code>（更新资源），<code>DELETE</code>（删除资源），<code>HEAD</code>（获取元数据）</td>
+</tr>
+<tr>
+<td align="left"><strong>请求目标</strong></td>
+<td align="left">指定请求的资源。通常是 URL 的路径部分。</td>
+<td align="left"><code>/index.html</code>, <code>/api/users/123</code></td>
+</tr>
+<tr>
+<td align="left"><strong>HTTP 版本</strong></td>
+<td align="left">客户端使用的协议版本。</td>
+<td align="left"><code>HTTP/1.1</code>, <code>HTTP/2</code></td>
+</tr>
+</tbody></table>
+<h4 id="2-请求头"><a href="#2-请求头" class="headerlink" title="2. 请求头"></a><strong>2. 请求头</strong></h4><p>一系列键值对，为服务器提供请求的附加信息。</p>
+<table>
+<thead>
+<tr>
+<th align="left">常见请求头</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>Host</code></td>
+<td align="left"><strong>必需</strong>。服务器的域名和端口。</td>
+</tr>
+<tr>
+<td align="left"><code>User-Agent</code></td>
+<td align="left">客户端软件标识（浏览器&#x2F;操作系统）。</td>
+</tr>
+<tr>
+<td align="left"><code>Accept</code></td>
+<td align="left">客户端能够处理的响应内容类型（如 <code>text/html</code>, <code>application/json</code>）。</td>
+</tr>
+<tr>
+<td align="left"><code>Content-Type</code></td>
+<td align="left"><strong>请求体</strong>的媒体类型（如 <code>application/json</code>）。</td>
+</tr>
+<tr>
+<td align="left"><code>Content-Length</code></td>
+<td align="left"><strong>请求体</strong>的长度（字节）。</td>
+</tr>
+<tr>
+<td align="left"><code>Authorization</code></td>
+<td align="left">包含访问资源的凭证（如 <code>Bearer &lt;token&gt;</code>）。</td>
+</tr>
+<tr>
+<td align="left"><code>Cookie</code></td>
+<td align="left">将之前服务器设置的 Cookie 回传。</td>
+</tr>
+</tbody></table>
+<h4 id="3-请求体"><a href="#3-请求体" class="headerlink" title="3. 请求体"></a><strong>3. 请求体</strong></h4><ul>
+<li><strong>用途</strong>：用于在 <code>POST</code>、<code>PUT</code> 等方法中携带需要发送的数据。</li>
+<li><strong>内容</strong>：表单数据、JSON、XML、文件等。</li>
+<li><strong>格式</strong>：由 <code>Content-Type</code> 头指定。</li>
+</ul>
+<hr>
+<h3 id="Request-完整示例"><a href="#Request-完整示例" class="headerlink" title="Request 完整示例"></a><strong>Request 完整示例</strong></h3><p>http</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">POST /api/login HTTP/1.1</span><br><span class="line">Host: www.example.com</span><br><span class="line">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36</span><br><span class="line">Content-Type: application/json</span><br><span class="line">Content-Length: 52</span><br><span class="line">Accept: application/json</span><br><span class="line"></span><br><span class="line">&#123;&quot;username&quot;: &quot;alice&quot;, &quot;password&quot;: &quot;Str0ngP@ssw0rd!&quot;&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>解读</strong>：</p>
+<ul>
+<li><strong>请求行</strong>：使用 <code>POST</code> 方法向 <code>/api/login</code> 发送数据。</li>
+<li><strong>请求头</strong>：<ul>
+<li><code>Host</code>：目标服务器。</li>
+<li><code>Content-Type</code> 和 <code>Content-Length</code>：描述了请求体是长度为 52 字节的 JSON 数据。</li>
+<li><code>Accept</code>：期望服务器返回 JSON 格式的响应。</li>
+</ul>
+</li>
+<li><strong>请求体</strong>：具体的登录凭证（JSON 格式）。</li>
+</ul>
+<hr>
+<h3 id="二、Response（响应）-详细分解"><a href="#二、Response（响应）-详细分解" class="headerlink" title="二、Response（响应） - 详细分解"></a><strong>二、Response（响应） - 详细分解</strong></h3><p>响应包是服务器对客户端请求的“回答”。</p>
+<h4 id="1-状态行"><a href="#1-状态行" class="headerlink" title="1. 状态行"></a><strong>1. 状态行</strong></h4><p>响应的第一行，格式为：<strong><code>&lt;HTTP版本&gt; &lt;状态码&gt; &lt;原因短语&gt;</code></strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">部分</th>
+<th align="left">描述</th>
+<th align="left">常见示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>HTTP 版本</strong></td>
+<td align="left">服务器使用的协议版本。</td>
+<td align="left"><code>HTTP/1.1</code>, <code>HTTP/2</code></td>
+</tr>
+<tr>
+<td align="left"><strong>状态码</strong></td>
+<td align="left">一个三位数代码，表示请求的结果。</td>
+<td align="left"><code>200 OK</code>（成功），<code>404 Not Found</code>（未找到），<code>500 Internal Server Error</code>（服务器错误）</td>
+</tr>
+<tr>
+<td align="left"><strong>原因短语</strong></td>
+<td align="left">状态码的简短文字描述。</td>
+<td align="left"><code>OK</code>, <code>Not Found</code></td>
+</tr>
+</tbody></table>
+<p><strong>主要状态码分类</strong>：</p>
+<ul>
+<li><strong>1xx (信息)</strong>：请求已接收，继续处理。</li>
+<li><strong>2xx (成功)</strong>：请求被成功处理。<strong><code>200 OK</code></strong> 是最常见的成功状态。</li>
+<li><strong>3xx (重定向)</strong>：需要客户端进一步操作以完成请求。</li>
+<li><strong>4xx (客户端错误)</strong>：请求包含语法错误或无法完成。<strong><code>404 Not Found</code></strong>（资源不存在），<strong><code>403 Forbidden</code></strong>（无权限）。</li>
+<li><strong>5xx (服务器错误)</strong>：服务器处理请求时发生错误。<strong><code>500 Internal Server Error</code></strong>（服务器内部错误）。</li>
+</ul>
+<h4 id="2-响应头"><a href="#2-响应头" class="headerlink" title="2. 响应头"></a><strong>2. 响应头</strong></h4><p>一系列键值对，提供关于响应的元数据。</p>
+<table>
+<thead>
+<tr>
+<th align="left">常见响应头</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>Content-Type</code></td>
+<td align="left"><strong>响应体</strong>的媒体类型（如 <code>text/html; charset=UTF-8</code>）。</td>
+</tr>
+<tr>
+<td align="left"><code>Content-Length</code></td>
+<td align="left"><strong>响应体</strong>的长度（字节）。</td>
+</tr>
+<tr>
+<td align="left"><code>Server</code></td>
+<td align="left">服务器软件信息。</td>
+</tr>
+<tr>
+<td align="left"><code>Set-Cookie</code></td>
+<td align="left">指示客户端存储一个 Cookie。</td>
+</tr>
+<tr>
+<td align="left"><code>Cache-Control</code></td>
+<td align="left">指示如何缓存响应（如 <code>max-age=3600</code>）。</td>
+</tr>
+<tr>
+<td align="left"><code>Location</code></td>
+<td align="left">在重定向时使用，指定新的资源地址。</td>
+</tr>
+</tbody></table>
+<h4 id="3-响应体"><a href="#3-响应体" class="headerlink" title="3. 响应体"></a><strong>3. 响应体</strong></h4><ul>
+<li><strong>用途</strong>：包含服务器返回的实际数据。</li>
+<li><strong>内容</strong>：如果请求成功，可能是 HTML 网页、JSON 数据、图片等。如果请求失败，可能是错误描述页面。</li>
+</ul>
+<hr>
+<h3 id="Response-完整示例"><a href="#Response-完整示例" class="headerlink" title="Response 完整示例"></a><strong>Response 完整示例</strong></h3><p>http</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Content-Type: application/json; charset=utf-8</span><br><span class="line">Content-Length: 67</span><br><span class="line">Server: nginx/1.18.0</span><br><span class="line">Set-Cookie: session_id=abc123; Path=/; HttpOnly</span><br><span class="line"></span><br><span class="line">&#123;&quot;status&quot;: &quot;success&quot;, &quot;message&quot;: &quot;Login successful&quot;, &quot;user_id&quot;: 12345&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>解读</strong>：</p>
+<ul>
+<li><strong>状态行</strong>：<code>HTTP/1.1 200 OK</code> 表示请求已成功处理。</li>
+<li><strong>响应头</strong>：<ul>
+<li><code>Content-Type</code> 和 <code>Content-Length</code>：描述了响应体是 JSON 数据。</li>
+<li><code>Server</code>：显示了服务器软件是 Nginx。</li>
+<li><code>Set-Cookie</code>：要求浏览器设置一个会话 Cookie。</li>
+</ul>
+</li>
+<li><strong>响应体</strong>：具体的成功响应数据（JSON 格式）。</li>
+</ul>
+<hr>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h3><table>
+<thead>
+<tr>
+<th align="left">特性</th>
+<th align="left">Request（请求）</th>
+<th align="left">Response（响应）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>发起方</strong></td>
+<td align="left">客户端</td>
+<td align="left">服务器</td>
+</tr>
+<tr>
+<td align="left"><strong>目的</strong></td>
+<td align="left">向服务器索取资源或提交数据</td>
+<td align="left">返回客户端请求的结果或数据</td>
+</tr>
+<tr>
+<td align="left"><strong>起始行</strong></td>
+<td align="left">请求行（方法 + URL + 版本）</td>
+<td align="left">状态行（版本 + 状态码 + 原因）</td>
+</tr>
+<tr>
+<td align="left"><strong>主体内容</strong></td>
+<td align="left">要上传的数据（如表单、文件）</td>
+<td align="left">要下载的数据（如网页、API 结果）</td>
+</tr>
+</tbody></table>
+
+    </div>
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%B8%97%E9%80%8F/" rel="tag"># 渗透</a>
+              <a href="/tags/%E8%87%AA%E5%AD%A6/" rel="tag"># 自学</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/10/15/%E6%B8%97%E9%80%8F/" rel="prev" title="渗透测试">
+                  <i class="fa fa-angle-left"></i> 渗透测试
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/10/15/linux/" rel="next" title="网络安全">
+                  网络安全 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">sm</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
